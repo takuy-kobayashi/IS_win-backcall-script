@@ -1,0 +1,261 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>7月問い合わせ トーク例</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
+<style>
+/* Layout: one reading column. A STEP rail on the left of each section; OP lines are the main column, parent lines sit indented and muted. */
+:root {
+  --bg: #F4F6F8;
+  --surface: #FFFFFF;
+  --ink: #1F262C;
+  --ink-soft: #4A555E;
+  --muted: #8C969E;
+  --line: #D5DBE0;
+  --charcoal: #333F48;
+  --on-charcoal: #FFFFFF;
+  --cyan: #0095DA;
+  --cyan-deep: #0070B0;
+  --cyan-tint: #E3F3FB;
+  --cyan-ink: #00577F;
+  --parent-bg: #EEF1F3;
+  --font: "BIZ UDPGothic", "Meiryo UI", "Meiryo", "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161B1F; --surface: #1F262C; --ink: #EEF2F5; --ink-soft: #C3CCD3; --muted: #7D8891; --line: #34404A;
+    --charcoal: #0E1215; --on-charcoal: #EEF2F5; --cyan: #33B5EE; --cyan-deep: #2A8FCB; --cyan-tint: #163445; --cyan-ink: #A9DDF5; --parent-bg: #252D34;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161B1F; --surface: #1F262C; --ink: #EEF2F5; --ink-soft: #C3CCD3; --muted: #7D8891; --line: #34404A;
+  --charcoal: #0E1215; --on-charcoal: #EEF2F5; --cyan: #33B5EE; --cyan-deep: #2A8FCB; --cyan-tint: #163445; --cyan-ink: #A9DDF5; --parent-bg: #252D34;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.75; }
+.band { background: var(--charcoal); color: var(--on-charcoal); }
+.wrap { max-width: 920px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band .wrap { padding-block: 28px 24px; display: grid; gap: 6px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--cyan); }
+h1 { margin: 0; font-size: clamp(22px, 4vw, 30px); line-height: 1.35; text-wrap: balance; }
+.lede { margin: 0; color: #C8D1D8; font-size: 14px; }
+main.wrap { padding-block: 24px 56px; display: grid; gap: 28px; }
+
+/* setting */
+.setting { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.setting h2, .flow h2 { margin: 0; font-size: 14px; padding: 10px 16px; background: var(--charcoal); color: var(--on-charcoal); letter-spacing: .04em; }
+.setting dl { margin: 0; display: grid; grid-template-columns: 11em 1fr; }
+.setting dt, .setting dd { margin: 0; padding: 10px 16px; border-top: 1px solid var(--line); }
+.setting dt { font-weight: 700; font-size: 13px; color: var(--ink-soft); }
+.setting dd { min-width: 0; }
+.setting .hidden-truth { background: var(--cyan-tint); color: var(--cyan-ink); }
+.setting .hidden-truth ul { margin: 0; padding-left: 1.2em; }
+@media (max-width: 560px) {
+  .setting dl { grid-template-columns: 1fr; }
+  .setting dd { border-top: 0; padding-top: 0; }
+}
+
+/* legend + toggle */
+.tools { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--ink-soft); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.chip { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 4px; }
+.chip.op { background: var(--charcoal); color: var(--on-charcoal); }
+.chip.pa { background: var(--parent-bg); color: var(--muted); border: 1px solid var(--line); }
+.toggle { font: inherit; font-size: 13px; font-weight: 700; color: var(--cyan-deep); background: var(--surface); border: 1px solid var(--cyan); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.toggle:hover { background: var(--cyan-tint); }
+.toggle:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+/* step nav */
+.steps { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; padding: 0; margin: 0; list-style: none; }
+.steps a { display: block; text-decoration: none; color: #fff; background: var(--cyan); font-size: 12px; font-weight: 700; text-align: center; padding: 8px 4px; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%, 10px 50%); line-height: 1.3; }
+.steps li:first-child a { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%); }
+.steps a.yama { background: var(--cyan-deep); }
+.steps a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+@media (max-width: 640px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* step sections */
+.step { display: grid; grid-template-columns: 150px 1fr; gap: 16px; scroll-margin-top: 16px; }
+.rail { position: relative; }
+.rail-inner { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); background: var(--cyan); color: #fff; padding: 12px 12px 22px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), 50% 100%, 0 calc(100% - 12px)); display: grid; gap: 4px; }
+.step.yama .rail-inner { background: var(--cyan-deep); }
+.rail .num { font-size: 12px; font-weight: 700; opacity: .85; }
+.rail .name { font-size: 16px; font-weight: 700; line-height: 1.35; }
+.rail .tag { justify-self: start; font-size: 11px; font-weight: 700; background: #fff; color: var(--cyan-deep); padding: 0 6px; border-radius: 3px; }
+.dialog { display: grid; gap: 10px; min-width: 0; }
+.aim { margin: 0; font-size: 13px; color: var(--cyan-ink); background: var(--cyan-tint); padding: 8px 12px; border-radius: 6px; }
+.aim b { margin-right: .4em; }
+.line { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
+.line .who { margin-top: 4px; }
+.line.op p { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 16px; font-weight: 700; line-height: 1.8; min-width: 0; }
+.line.pa { margin-left: 3.2em; }
+.line.pa p { margin: 0; background: var(--parent-bg); color: var(--muted); border-radius: 8px; padding: 6px 12px; font-size: 13.5px; line-height: 1.7; min-width: 0; }
+.pause { margin: 0 0 0 3.2em; font-size: 13px; font-weight: 700; color: var(--cyan-deep); }
+body.hide-parent .line.pa p { color: transparent; background: repeating-linear-gradient(135deg, var(--parent-bg) 0 8px, var(--bg) 8px 16px); user-select: none; }
+@media (max-width: 640px) {
+  .step { grid-template-columns: 1fr; gap: 10px; }
+  .rail-inner { position: static; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%); padding: 10px 24px 10px 14px; grid-auto-flow: column; justify-content: start; align-items: center; gap: 10px; }
+  .line.pa, .pause { margin-left: 1.6em; }
+}
+
+/* flow summary */
+.flow { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.flow ol { margin: 0; padding: 14px 16px 16px 2.4em; display: grid; gap: 6px; }
+.flow li b { color: var(--cyan-ink); }
+.flow .note { margin: 0; padding: 0 16px 16px; font-size: 13px; color: var(--ink-soft); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<header class="band">
+  <div class="wrap">
+    <div class="eyebrow">休眠営業（落とし）｜トーク例</div>
+    <h1>7月問い合わせ・最初は口が重いご家庭</h1>
+    <p class="lede">最初は情報を出さない保護者が、聞き方しだいで少しずつ状況を話し、自分から「必要かも」と思うまでの通話例。</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="setting" aria-labelledby="setting-h">
+    <h2 id="setting-h">ご家庭の設定</h2>
+    <dl>
+      <dt>問い合わせ</dt><dd>7月にWebから資料請求。当時の電話は「資料を見て検討します」で落とし</dd>
+      <dt>お子さま</dt><dd>中学2年生・男の子（ハルトくん）／サッカー部</dd>
+      <dt>前回のメモ</dt><dd>ほぼなし（きっかけ・成績の記録なし）</dd>
+      <dt>保護者の様子</dt><dd>お母さま。最初は「まあ…」「特には」と口が重く、聞かれたことにだけ答える</dd>
+      <dt>最初は言わない<br>本当の状況</dt>
+      <dd class="hidden-truth">
+        <ul>
+          <li>夏休みは部活中心で、家での勉強はほぼなし</li>
+          <li>2学期中間で数学が 64点 → 52点</li>
+          <li>本人は「次は頑張る」と言うだけ</li>
+          <li>期末は11月下旬、12月に三者面談</li>
+        </ul>
+      </dd>
+      <dt>架電のタイミング</dt><dd>10月下旬（中間テストが返ってきた頃）</dd>
+    </dl>
+  </section>
+
+  <div class="tools">
+    <div class="legend">
+      <span><i class="chip op">OP</i>こちらのトーク（メイン）</span>
+      <span><i class="chip pa">保護者</i>ご家庭の反応</span>
+    </div>
+    <button class="toggle" id="toggle-parent" type="button" aria-pressed="false">保護者の発言を隠す</button>
+  </div>
+
+  <nav aria-label="STEP">
+    <ol class="steps">
+      <li><a href="#step0">0 オープニング</a></li>
+      <li><a href="#step1">1 前回理由の深掘り</a></li>
+      <li><a href="#step2" class="yama">2 変わってない現状</a></li>
+      <li><a href="#step3" class="yama">3 未来の予定</a></li>
+      <li><a href="#step4">4 検討のお願い</a></li>
+      <li><a href="#step5">5 日程調整</a></li>
+    </ol>
+  </nav>
+
+  <section class="step" id="step0">
+    <div class="rail"><div class="rail-inner"><span class="num">STEP 0</span><span class="name">オープニング</span></div></div>
+    <div class="dialog">
+      <p class="aim"><b>ねらい</b>電話した理由と、話を聞く理由を最初の30秒で伝える</p>
+      <div class="line op"><i class="chip op who">OP</i><p>お世話になっております。個別教室のトライの〇〇と申します。山田様のお電話でお間違いないでしょうか？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>…はい、そうですけど。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>7月にお問い合わせいただいていたので、ご連絡させていただきました。ちょうどこの時期は、2学期の中間テストが返ってきたタイミングで、同じ中学2年生のご家庭からのご相談が増えていまして、山田さんもその後いかがかなと思い、ご連絡しました。今2,3分お時間よろしいですか？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>ああ…少しなら大丈夫です。</p></div>
+    </div>
+  </section>
+
+  <section class="step" id="step1">
+    <div class="rail"><div class="rail-inner"><span class="num">STEP 1</span><span class="name">前回理由の深掘り</span></div></div>
+    <div class="dialog">
+      <p class="aim"><b>ねらい</b>7月というだけで期末とは決めつけず、きっかけから聞く。止まったら例示で選んでもらう</p>
+      <div class="line op"><i class="chip op who">OP</i><p>ありがとうございます。7月にお問い合わせいただいたときは、どんなことがきっかけでしたっけ？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>うーん、まあ…いろいろですけど。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>そうですよね。お母さまのイメージで大丈夫なんですけど、例えば期末テストの結果が気になったとか、夏休みの過ごし方が気になったとか、どちらかというと近いのはありますか？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>どっちかというと夏休みですかね。家で全然やらないので。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>あ〜、多いですよね。部活があると、なかなか家で机に向かう時間って取れないですよね。テスト前もあまり勉強しない感じでしたか？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>そうなんです。部活が忙しくて、テスト前日にちょっとやるくらいで…</p></div>
+    </div>
+  </section>
+
+  <section class="step yama" id="step2">
+    <div class="rail"><div class="rail-inner"><span class="num">STEP 2</span><span class="name">変わってない現状</span><span class="tag">ヤマ場</span></div></div>
+    <div class="dialog">
+      <p class="aim"><b>ねらい</b>三択で選んでもらい、事実と本人の様子を聞いて、最後に要約で「変わってない」を保護者の口から</p>
+      <div class="line op"><i class="chip op who">OP</i><p>その時気になっていたところは、今はいかがですか？良くなってきた、変わらない、ちょっと厳しくなった、でいうとどれが近いですか？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>…変わらない、ですかね。正直。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>言いにくいことまでありがとうございます。ちなみに中間テストは、もう結果が返ってきました？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>返ってきました。数学が1学期より下がっちゃって。60点台だったのが50点ちょっとで…</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>そうだったんですね。ご本人は、どんなふうに言ってます？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>「次は頑張る」とは言うんですけど、結局やってないんですよ。夏休みも部活ばっかりで。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>少し整理させてください。7月の時点で気になっていたおうちでの勉強の習慣は、夏を越えても変わっていなくて、中間では数学が下がってしまった、ということですね。</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>そうですね…結局あの時から変わってないです。</p></div>
+    </div>
+  </section>
+
+  <section class="step yama" id="step3">
+    <div class="rail"><div class="rail-inner"><span class="num">STEP 3</span><span class="name">未来の予定</span><span class="tag">ヤマ場</span></div></div>
+    <div class="dialog">
+      <p class="aim"><b>ねらい</b>仮定ではなく予定で聞き、残り時間に保護者自身で気づいてもらう</p>
+      <div class="line op"><i class="chip op who">OP</i><p>次の期末テストっていつ頃でしたっけ？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>11月の終わりだったと思います。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>じゃあ、あと5週間くらいですね。</p></div>
+      <p class="pause">（2〜3秒、間を置く）</p>
+      <div class="line op"><i class="chip op who">OP</i><p>そこに向けては、何かお考えになっていることってあります？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>…いや、特には。このままだと同じことになりそうですよね。12月には三者面談もあるし…</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>7月から3か月経って、期末まであと5週間…気がかりですよね。</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>そうなんですよ。</p></div>
+    </div>
+  </section>
+
+  <section class="step" id="step4">
+    <div class="rail"><div class="rail-inner"><span class="num">STEP 4</span><span class="name">検討のお願い</span></div></div>
+    <div class="dialog">
+      <p class="aim"><b>ねらい</b>冒頭の「ご相談が増えている」を回収し、お願いの形で言い切る</p>
+      <div class="line op"><i class="chip op who">OP</i><p>冒頭でお伝えしたように、皆さん「このままで大丈夫か確認したい」という方が多いんです。山田さんも、少しでも気になっているようでしたら、一度学習相談で確認してみてください。</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>そうですね…</p></div>
+    </div>
+  </section>
+
+  <section class="step" id="step5">
+    <div class="rail"><div class="rail-inner"><span class="num">STEP 5</span><span class="name">日程調整</span></div></div>
+    <div class="dialog">
+      <p class="aim"><b>ねらい</b>一度引いてから絞る。探す途中で「埋まっている」を伝えて一枠だけ出し、変更の逃げ道を残して取っておく</p>
+      <div class="line op"><i class="chip op who">OP</i><p>とはいえ、今すぐにというわけにもいかないと思います。お子さまと相談する材料に、空いている日程を先にお伝えしておきますね。ある程度絞ってお伝えしようと思いますが、平日と土日ですと、どちらが動きやすいですか？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>平日は部活があるので、土日ですかね。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>土曜と日曜ですと、どちらがよろしいですか？</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>日曜の午後なら。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>承知しました。日曜の午後ですと、期末前でご相談が多くて直近はかなり埋まっているんですが…ちょうど11月1日の14時でしたら一枠だけ空いていますね。</p></div>
+      <div class="line pa"><i class="chip pa who">保護者</i><p>じゃあ、そこで。</p></div>
+      <div class="line op"><i class="chip op who">OP</i><p>ありがとうございます。では11月1日（日）14時でお取りしておきます。変更はフリーダイヤルにご連絡いただければ大丈夫なので、ハルトくんとも相談してみてください。前日に一度、確認のご連絡をさせていただきます。</p></div>
+    </div>
+  </section>
+
+  <section class="flow" aria-labelledby="flow-h">
+    <h2 id="flow-h">保護者の口がひらいていく流れ</h2>
+    <ol>
+      <li>最初は　<b>「…はい、少しなら」</b></li>
+      <li>例示で選んでもらうと　<b>「家で全然やらないので」</b></li>
+      <li>三択で聞くと　<b>「変わらない、ですかね」</b></li>
+      <li>事実を聞くと　<b>「数学が下がっちゃって」</b></li>
+      <li>本人の様子を聞くと　<b>「結局やってない」</b></li>
+      <li>予定を聞いて黙ると　<b>「このままだと同じことに…三者面談もあるし」</b></li>
+    </ol>
+    <p class="note">数学の下がり幅、三者面談、「このままだとまずい」に近い一言は、どれもOPからは言わず、保護者の口から出ている。</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById('toggle-parent');
+  btn.addEventListener('click', function () {
+    var on = document.body.classList.toggle('hide-parent');
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '保護者の発言を表示する' : '保護者の発言を隠す';
+  });
+})();
+</script>
+
+</body></html>
